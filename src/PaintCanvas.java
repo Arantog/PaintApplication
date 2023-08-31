@@ -166,6 +166,7 @@ public class PaintCanvas extends JPanel implements MouseMotionListener {
 
                 }
             });
+           brushResize.getItem(0).setAccelerator(KeyStroke.getKeyStroke("ctrl Q"));
             brushResize.add(new AbstractAction("-") {
                 public void actionPerformed(ActionEvent event) {
                     if(size>1){
@@ -174,6 +175,7 @@ public class PaintCanvas extends JPanel implements MouseMotionListener {
 
                 }
             });
+            brushResize.getItem(1).setAccelerator(KeyStroke.getKeyStroke("ctrl W"));
             brushResize.add(new AbstractAction("4") {
                 public void actionPerformed(ActionEvent event) {
                     size = 4;
