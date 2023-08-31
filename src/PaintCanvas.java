@@ -65,7 +65,6 @@ public class PaintCanvas extends JPanel implements MouseMotionListener {
             fileMenu.getAccessibleContext().setAccessibleDescription("Dealing with Files");
             frame.setJMenuBar(menuBar);
 
-            // ...
             fileMenu.add(new AbstractAction("Reset canvas")
             {
                 public void actionPerformed(ActionEvent event)
@@ -266,8 +265,28 @@ public class PaintCanvas extends JPanel implements MouseMotionListener {
             JMenu viewMenu = new JMenu("View");
             menuBar.add(viewMenu);
 
-            JMenuItem resChange = new JMenuItem("Change canvas size");
+            JMenu resChange = new JMenu("Change canvas size");
             viewMenu.add(resChange);
+
+            resChange.add(new AbstractAction("1080x720") {
+                public void actionPerformed(ActionEvent event) {
+                    canvas.setSize(1080,720);
+                    frame.setSize(1080, 780);
+                }
+            });
+            resChange.add(new AbstractAction("800x600") {
+                public void actionPerformed(ActionEvent event) {
+                    canvas.setSize(800,600);
+                    frame.setSize(800, 660);
+                }
+            });
+            resChange.add(new AbstractAction("400x400") {
+                public void actionPerformed(ActionEvent event) {
+                    canvas.setSize(400,400);
+                    frame.setSize(400, 460);
+                }
+            });
+
 
 
             frame.setSize(800, 600);
